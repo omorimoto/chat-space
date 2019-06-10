@@ -22,7 +22,6 @@ Things you may want to cover:
 |name|string|unique: true|
 |e-mail|string|null: false,unique: true|
 |pass|string|null: false|
-|message|string|null: false|
 
 ### Association
 - has_many :messages
@@ -65,8 +64,7 @@ Things you may want to cover:
 - belongs_to :group
 - belongs_to :user
 
-
-
+/////////////////
 * Database initialization
 
 * How to run the test suite
