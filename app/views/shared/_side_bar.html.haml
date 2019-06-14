@@ -1,7 +1,7 @@
 .side-bar
   .header
     %h3.header__name
-      ユーザーネーム
+      = current_user.name
     %ul.header__lists
       %li.list
         = link_to do
@@ -12,7 +12,7 @@
   .groups
     .group
       .group__name
-        グループ名
+        グループ名だよー
       .group__message
         新着メッセージ
     .group
