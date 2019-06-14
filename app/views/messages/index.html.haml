@@ -1,54 +1,56 @@
-.flash-box
-  .notice グループを作成しました
-
 .wrapper
-  .chat-side
-    .side-header
-      .side-header__box
-        %p.side-header__box__user-name onsei
-        %ul.side-header__box__menu
-          %li.side-header__box__menu__new-group
-            = fa_icon 'edit'
-          %li.side-header__box__menu__edit-user
-            = fa_icon 'cog'
 
-    .groups
-      .group
-        %p.group__group-name test-group
-        %p.group__latest-message まだメッセージがありません
+  = render 'shared/side_bar'
 
-      .group
-        %p.group__group-name sample-group
-        %p.group__latest-message fucckkkkk youuuuuu
-
-      .group
-        %p.group__group-name mellow
-        %p.group__latest-message wwwwwwwwwwww
-
-  .chat-main 
-    .main-header
-      .main-header__left-box
-        %h2.main-header__left-box__current-group{"data-group_id" => ""} test-group
-        %ul.main-header__left-box__member-list
+  .chat
+    .header
+      .left-header
+        .left-header__title
+          グループ名
+        %ul.left-header__members
           Member：
-          %li.main-header__left-box__member-list__member onsei
-          %li.main-header__left-box__member-list__member onsii
-      .main-header__edit-btn Edit
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+          %li.member
+            メンバー名
+      .right-header
+        .right-header__button
+          Edit
     .messages
-      .message{"data-message_id" => ""}
-        .message__upper-info
-          %p.message__upper-info__talker onsei
-          %p.message__upper-info__date 2019/06/11(Tue) 11:59:35
-        %p.message__text okokokoo
-      .message{"data-message_id" => ""}
-        .message__upper-info
-          %p.message__upper-info__talker onsei
-          %p.message__upper-info__date 2019/06/11(Tue) 11:59:35
-        %p.message__text okokokoo
-    .form      
-      .form-box
-        .input-box
-          %input#message_content.input-box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
-          %label.input-box__image{:for => "message_image"}
-            %i.fa.fa-image
-        %input.submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+      .message
+        .upper-message
+          .upper-message__user-name
+            メンバー
+          .upper-message__date
+            2017/04/04
+        .lower-meesage
+          .lower-message__content
+            メッセージ
+      .message
+        .upper-message
+          .upper-message__user-name
+            メンバー
+          .upper-message__date
+            2017/04/04
+        .lower-meesage
+          .lower-message__content
+            メッセージ
+      .message
+        .upper-message
+          .upper-message__user-name
+            メンバー
+          .upper-message__date
+            2017/04/04
+        .lower-meesage
+          .lower-message__content
+            メッセージ
+    .form
+      %form
+        %input.form__message
+        .form__mask
+          %label.form__mask__image
+            = fa_icon 'picture-o', class: 'icon'
+            %input.hidden{type: 'file'}
+        %input.form__submit{type: 'submit', value: 'Send'}
